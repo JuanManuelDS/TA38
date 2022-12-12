@@ -7,9 +7,15 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { CharactersComponent } from './characters/characters.component';
 import { DetailsComponent } from './characters/details/details.component';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
-  declarations: [HomeComponent, AboutComponent, CharactersComponent, DetailsComponent],
-  imports: [CommonModule, HttpClientModule, PagesRoutingModule],
+  declarations: [
+    HomeComponent,
+    AboutComponent,
+    CharactersComponent,
+    DetailsComponent,
+  ],
+  imports: [CommonModule, HttpClientModule, PagesRoutingModule, MaterialModule],
 })
 export class PagesModule {}

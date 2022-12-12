@@ -3,3 +3,8 @@
 body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+
+.loading_container {
+    height: 75vh;
+}

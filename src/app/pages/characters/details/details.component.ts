@@ -18,8 +18,10 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit() {
     let idPersonaje = Number(this.activatedRoute.snapshot.paramMap.get('id'));
-    this.personajesService
-      .cargarPersonaje(idPersonaje)
-      .subscribe((resp) => (this.personaje = resp));
+    this.personajesService.cargarPersonaje(idPersonaje).subscribe((resp) => {
+      setTimeout(() => {
+        this.personaje = resp;
+      }, 500);
+    });
   }
 }

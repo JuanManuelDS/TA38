@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Character } from 'src/app/interfaces/character.interface';
 import { PersonajesService } from 'src/app/services/personajes.service';
 
 @Component({
@@ -17,15 +15,14 @@ export class CharactersComponent implements OnInit {
     return this.personajesService.pageIndex;
   }
 
-  constructor(
-    private personajesService: PersonajesService,
-    private router: Router
-  ) {}
+  constructor(private personajesService: PersonajesService) {}
 
   ngOnInit() {
     //Cuando se termina de cargar el componente llamo a la función cargarPersonajes del service para
     //que cargue los personajes
-    this.personajesService.cargarPersonajes().subscribe();
+    setTimeout(() => {
+      this.personajesService.cargarPersonajes().subscribe();
+    }, 650);
   }
 
   siguientePagina() {
